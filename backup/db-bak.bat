@@ -1,8 +1,8 @@
 
 
-copy y:\rayliblog\*.* e:\Backup\0.3_blog\ /y
+copy y:\blog\*.* e:\Backup\0.3_blog\ /y
 
-copy y:\raylifood\*.* e:\Backup\0.3_food\ /y
+copy y:\food\*.* e:\Backup\0.3_food\ /y
 
 copy x:\*.* e:\Backup\0.4_mall\ /y
 
