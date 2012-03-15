@@ -1,0 +1,22 @@
+#!/bin/bash 
+#this script for start|stop|restart rsync daemon service 
+#date:2012/03/15
+
+case "$1" in
+start)
+rsync --daemon
+echo "rsync start ok"
+;;
+restart)
+ps aux |grep "rsync --daemon"|grep -v "grep"|awk '{print $2}'|xargs -i{} kill -9 {}
+rm -rf /var/run/rsyncd.pid
+rsync --daemon
+echo "rsync restart ok"
+;;
+stop)
+ps aux |grep "rsync --daemon"|grep -v "grep"|awk '{print $2}'|xargs -i{} kill -9 {}
+rm -rf /var/run/rsyncd.pid
+echo "rsync stop ok"
+;;
+esac
+exit 0
